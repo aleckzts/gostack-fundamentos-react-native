@@ -46,13 +46,8 @@ const CartProvider: React.FC = ({ children }) => {
           product => product.id === id,
         );
         if (findProductIndex) {
-          // const updateProduct = products[findProductIndex];
-          // updateProduct.quantity += 1;
-
           const newProducts = [...products];
-          // newProducts[findProductIndex] = updateProduct;
           newProducts[findProductIndex].quantity += 1;
-
           setProducts(newProducts);
         }
       }
@@ -70,14 +65,15 @@ const CartProvider: React.FC = ({ children }) => {
           product => product.id === id,
         );
         if (findProductIndex) {
-          const updateProduct = products[findProductIndex];
-          updateProduct.quantity -= 1;
+          // const updateProduct = products[findProductIndex];
+          // updateProduct.quantity -= 1;
 
           const newProducts = [...products];
-          if (updateProduct.quantity <= 0) {
+          if (newProducts[findProductIndex].quantity <= 1) {
             newProducts.splice(findProductIndex, 1);
           } else {
-            newProducts[findProductIndex] = updateProduct;
+            // newProducts[findProductIndex] = updateProduct;
+            newProducts[findProductIndex].quantity -= 1;
           }
 
           setProducts(newProducts);
