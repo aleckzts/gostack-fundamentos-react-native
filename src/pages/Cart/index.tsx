@@ -116,6 +116,7 @@ const Cart: React.FC = () => {
         <TotalProductsText>{`${totalItensInCart} itens`}</TotalProductsText>
         <SubtotalValue>{cartTotal}</SubtotalValue>
       </TotalProductsContainer>
+      {/* <FloatingCart /> */}
     </Container>
   );
 };
